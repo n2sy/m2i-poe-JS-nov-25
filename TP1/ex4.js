@@ -23,7 +23,17 @@ btn.addEventListener("click", () => {
   console.log(etudiants);
   etudiants.sort();
   console.log(etudiants);
+
   divAffichage.textContent = etudiants.join(" ** ");
   //   divAffichage.innerHTML = "<h1>Geoffroy </h1>";
   //   divAffichage.innerText = "<h1>Geoffroy </h1>";
 });
+
+// version de Nicolas
+//  function afficherEtudiants() {
+//   const htmlListe = etudiants
+//     .sort()
+//     .map(nom => `<li class="list-group-item">${nom}</li>`)
+//     .join("");
+//   document.getElementById("liste").innerHTML = htmlListe;
+// }
