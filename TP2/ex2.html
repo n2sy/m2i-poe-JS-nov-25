@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script>
+    // let d = "20/11/25";
+    // let t = d.split("/");
+    // console.log(t);
+
+    let today = new Date();
+    //console.log(today);
+
+    let nbJours = prompt("Donnez le nombre de jours à prévoir");
+
+    function ajouterJours(date, nbDays) {
+      let copieDate = new Date(date);
+      copieDate.setDate(copieDate.getDate() + Number(nbDays));
+      return copieDate;
+    }
+
+    let newDate = ajouterJours(today, nbJours);
+    alert(`Date aprés ${nbJours} jours : ${newDate.toString()}`);
+  </script>
+  <body></body>
+</html>
