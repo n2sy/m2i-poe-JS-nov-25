@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        width: 200px;
+        height: 200px;
+        background-color: brown;
+        text-align: center;
+        margin: 50px auto;
+        font-size: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="divBox" class="box">Survolez-moi</div>
+  </body>
+  <script>
+    // document.getElementById("divBox").addEventListener("mouseenter", () => {
+    //   this.style.backgroundColor = "lightblue";
+    //   this.innerHTML = "Merci !";
+    // });
+    document.getElementById("divBox").onmouseenter = function () {
+      this.style.backgroundColor = "lightblue";
+      this.innerHTML = "Merci !";
+    };
+    document.getElementById("divBox").onmouseleave = function () {
+      this.style.backgroundColor = "yellow";
+      this.innerHTML = "Re-survolez moi !";
+    };
+  </script>
+</html>
