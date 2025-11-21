@@ -29,6 +29,23 @@
       }
     });
     console.log(stats);
+
+    const users = [
+      { id: 1, revenus: [100, 300, 600] },
+      { id: 2, revenus: [1000, 400] },
+      { id: 3, revenus: [400, 250, 310, 1200, 1430] },
+    ];
+
+    let totalRevenus = users.map((user) => {
+      let somme = 0;
+      for (const revenu of user.revenus) {
+        somme += revenu;
+      }
+
+      return { id: user.id, total: somme };
+    });
+
+    console.log(totalRevenus);
   </script>
   <body></body>
 </html>
