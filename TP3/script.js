@@ -4,10 +4,15 @@ const btnAjouter = document.getElementById("btn-ajouter");
 const listeDepenses = document.getElementById("list-dep");
 const spanTotal = document.getElementById("total-dep");
 const filtrePrix = document.getElementById("filtre-prix");
+const btnEffacer = document.getElementById("btn-effacer");
 
 let afficherPasDeDepenses = false;
 let total = 0;
 btnAjouter.addEventListener("click", () => {
+  if (!inpIntitule.value.trim().length || !inpMontant.value.trim().length) {
+    alert("Veuillez remplir les deux champs SVP");
+    return;
+  }
   if (afficherPasDeDepenses) {
     listeDepenses.innerHTML = "";
     afficherPasDeDepenses = false;
@@ -25,7 +30,16 @@ btnAjouter.addEventListener("click", () => {
 
   total += +inpMontant.value;
   spanTotal.textContent = `${total}€`;
+
+  reinit();
 });
+
+btnEffacer.addEventListener("click", reinit);
+
+function reinit() {
+  inpIntitule.value = "";
+  inpMontant.value = "";
+}
 
 filtrePrix.addEventListener("input", (e) => {
   for (const child of listeDepenses.children) {
