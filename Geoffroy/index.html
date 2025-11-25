@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bibliothèque</title>
+  </head>
+  <body>
+    <h1>Nouveau livre</h1>
+    <div id="infos"></div>
+    <div id="error"></div>
+    <div id="create"></div>
+    <form id="form">
+      <label for="title">Titre</label>
+      <input type="text" id="title" name="title" />
+
+      <label for="author">Auteur</label>
+      <input type="text" id="author" name="author" />
+
+      <label for="isbn">ISBN</label>
+      <input type="text" id="isbn" name="isbn" />
+
+      <input type="submit" value="Ajouter le livre" />
+    </form>
+    <div id="arrayBooks">
+      <table id="books">
+        <thead>
+          <tr>
+            <th>Titre</th>
+            <th>Auteur</th>
+            <th>ISBN</th>
+          </tr>
+        </thead>
+        <tbody id="booksBody"></tbody>
+      </table>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

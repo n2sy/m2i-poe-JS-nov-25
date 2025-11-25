@@ -1,32 +1,16 @@
 {
-  "users": [
+  "tasks": [
     {
-      "id": "671f",
-      "email": "nidhal@gmail.com",
-      "password": "qwerty",
-      "role": "user",
-      "username": "n2sy"
+      "id": "1d8b",
+      "checked": false,
+      "date_c": "2025-11-25T14:54:25.623Z",
+      "text": "Tasks M2i"
     },
     {
-      "id": "2",
-      "email": "baptiste@gmail.com",
-      "password": "qwerty",
-      "role": "user",
-      "username": "bap"
-    },
-    {
-      "id": "3",
-      "email": "bernard@gmail.com",
-      "password": "ttt",
-      "role": "user",
-      "username": "anard"
-    },
-    {
-      "id": "78f6",
-      "username": "marilou",
-      "email": "marie@gmail.com",
-      "role": "admin"
+      "id": "4902",
+      "checked": false,
+      "date_c": "2025-11-25T14:55:21.789Z",
+      "text": "Projet 2"
     }
-  ],
-  "products": []
+  ]
 }
