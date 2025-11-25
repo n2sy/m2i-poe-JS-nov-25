@@ -6,7 +6,7 @@ const spanTotal = document.getElementById("total-dep");
 const filtrePrix = document.getElementById("filtre-prix");
 const btnEffacer = document.getElementById("btn-effacer");
 
-let afficherPasDeDepenses = false;
+let afficherPasDeDepenses = true;
 let total = 0;
 btnAjouter.addEventListener("click", () => {
   if (!inpIntitule.value.trim().length || !inpMontant.value.trim().length) {
@@ -19,13 +19,22 @@ btnAjouter.addEventListener("click", () => {
   }
 
   let newLi = document.createElement("li");
-  newLi.className = "list-group-item"; // ou passer par classList
+  newLi.className = "list-group-item  d-flex justify-content-between"; // ou passer par classList
+
+  newLi.amount = inpMontant.value;
+  let newBtn = document.createElement("button");
+  newBtn.className = "btn btn-danger";
+  newBtn.textContent = "Supprimer";
+  newBtn.addEventListener("click", () => {
+    supprimerDepenses(newLi);
+  });
 
   let newText = document.createTextNode(
     `${inpIntitule.value} : ${inpMontant.value}€`
   );
 
   newLi.appendChild(newText);
+  newLi.appendChild(newBtn);
   listeDepenses.appendChild(newLi);
 
   total += +inpMontant.value;
@@ -33,6 +42,19 @@ btnAjouter.addEventListener("click", () => {
 
   reinit();
 });
+
+function supprimerDepenses(depenseASupprimer) {
+  if (confirm("Etes-vous sûr de vouloir supprimer cette dépense ?")) {
+    listeDepenses.removeChild(depenseASupprimer);
+    total = total - depenseASupprimer.amount;
+    spanTotal.textContent = `${total}€`;
+
+    if (!listeDepenses.children.length) {
+      listeDepenses.innerHTML = `<li class="list-group-item">💼 Aucune dépense enregistrée</li>`;
+      afficherPasDeDepenses = true;
+    }
+  }
+}
 
 btnEffacer.addEventListener("click", reinit);
 
